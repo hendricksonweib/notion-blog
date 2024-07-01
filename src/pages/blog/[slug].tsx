@@ -12,6 +12,7 @@ import React, { CSSProperties, useEffect } from 'react'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import { getBlogLink, getDateStr } from '../../lib/blog-helpers'
+import { RotatingSquare } from 'react-loader-spinner'
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -121,7 +122,20 @@ const RenderPost = ({ post, redirect, preview }) => {
   // If the page is not yet generated, this will be displayed
   // initially until getStaticProps() finishes running
   if (router.isFallback) {
-    return <div>Loading...</div>
+    return (
+      <div className="erro-loading">
+        carregando...
+        <RotatingSquare
+          visible={true}
+          height="100"
+          width="100"
+          color="#CAFF1F"
+          ariaLabel="rotating-square-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </div>
+    )
   }
 
   // if you don't have a post at this point, and are not
