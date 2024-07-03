@@ -64,9 +64,11 @@ const Index = ({ posts = [], preview }) => {
       )}
       <div className={`${sharedStyles.layout} ${blogStyles.blogIndex}`}>
         {posts.length === 0 && (
-          <p className={blogStyles.noPosts}>Sem posts no momento! Aguarde!</p>
+          <div>
+            <p className={blogStyles.noPosts}>Sem posts no momento! Aguarde!</p>
+            <img src="/noPost.svg" alt="No Post" />
+          </div>
         )}
-        <img src="/noPost.svg" alt="No Post" />
         {posts.map((post) => {
           return (
             <div className={blogStyles.postPreview} key={post.Slug}>
@@ -81,10 +83,12 @@ const Index = ({ posts = [], preview }) => {
                 </span>
               </h3>
               {post.Authors.length > 0 && (
-                <div className="authors">By: {post.Authors.join(' ')}</div>
+                <div className="authors">Por: {post.Authors.join(' ')}</div>
               )}
               {post.Date && (
-                <div className="posted">Posted: {getDateStr(post.Date)}</div>
+                <div className="posted">
+                  Postado em: {getDateStr(post.Date)}
+                </div>
               )}
               <p>
                 {(!post.preview || post.preview.length === 0) &&

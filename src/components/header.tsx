@@ -5,8 +5,8 @@ import { useRouter } from 'next/router'
 import styles from '../styles/header.module.css'
 
 const navItems: { label: string; page?: string; link?: string }[] = [
-  { label: 'Home', page: '/' },
-  { label: 'Blog', page: '/blog' },
+  { label: 'Início', page: '/' },
+  { label: 'Notícias', page: '/blog' },
   // { label: 'Contact', page: '/contact' },
   // { label: 'Source Code', link: 'https://github.com/ijjk/notion-blog' },
 ]
@@ -31,19 +31,23 @@ const Header = ({ titlePre = '' }) => {
         <meta name="twitter:image" content={ogImageUrl} />
       </Head>
       <ul>
-        {navItems.map(({ label, page, link }) => (
-          <li key={label}>
-            {page ? (
-              <Link href={page}>
-                <a className={pathname === page ? 'active' : undefined}>
-                  {label}
-                </a>
-              </Link>
-            ) : (
-              <ExtLink href={link}>{label}</ExtLink>
-            )}
-          </li>
-        ))}
+        <img src="/Logoprincipal.png" alt="Logo_autoclipper.png" />
+        <div className="link">
+          {navItems.map(({ label, page, link }) => (
+            <li key={label}>
+              {page ? (
+                <Link href={page}>
+                  <a className={pathname === page ? 'active' : undefined}>
+                    {label}
+                  </a>
+                </Link>
+              ) : (
+                <ExtLink href={link}>{label}</ExtLink>
+              )}
+            </li>
+          ))}
+        </div>
+        <button id="primary-btn">Cadastrar</button>
       </ul>
     </header>
   )

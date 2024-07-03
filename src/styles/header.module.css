@@ -1,14 +1,18 @@
 .header {
   display: block;
   min-height: 64px;
-  padding: 2em 0;
+  padding: 1.4em 0;
   text-align: center;
   letter-spacing: -0.02em;
+  background-color: #060606;
 }
 
 .header ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .header ul li {
@@ -22,12 +26,16 @@
 }
 
 .header :global(a.active) {
-  color: #0070f3;
+  color: #caff1f;
   font-weight: 600;
+}
+
+#primary-btn {
+  background-color: #caff1f;
 }
 
 @media (max-width: 600px) {
   .header {
-    padding: .5em 0 2em;
+    padding: 0.5em 0 2em;
   }
 }
