@@ -1,6 +1,8 @@
 import Header from '../components/header'
 import ExtLink from '../components/ext-link'
 import Features from '../components/features'
+import Caroussel from '../components/Caroussel'
+
 import sharedStyles from '../styles/shared.module.css'
 
 export default function Index() {
@@ -8,8 +10,7 @@ export default function Index() {
     <>
       <Header titlePre="Home" />
       <div className={sharedStyles.layout}>
-        {/* banner aqui */}
-
+        {/* <Caroussel/> */}
         <div className="explanation">
           <p>
             This is a statically generated{' '}

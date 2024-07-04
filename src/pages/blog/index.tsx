@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Header from '../../components/header'
-
 import blogStyles from '../../styles/blog.module.css'
 import sharedStyles from '../../styles/shared.module.css'
 
@@ -62,6 +61,7 @@ const Index = ({ posts = [], preview }) => {
           </div>
         </div>
       )}
+
       <div className={`${sharedStyles.layout} ${blogStyles.blogIndex}`}>
         {posts.length === 0 && (
           <div>
